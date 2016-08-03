@@ -50,3 +50,34 @@ table {
 /******************************************************************************/
 /**************************     Custom styles     *****************************/
 /******************************************************************************/
+
+body {
+	background: #E2E4E6;
+}
+
+h2 {
+	text-align: center;
+}
+
+.hero-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;;
+	align-items: flex-start;
+	margin: 50px;
+}
+
+
+.hero-thumbnail {
+	background: white;
+	border: 1px solid black;
+	border-bottom: 2px solid black;
+	box-sizing: border-box;
+  border-radius: 4px;
+	margin-bottom: 10px;
+}
+.hero-thumbnail > img {
+	width: 200px;
+	height: 200px;
+}
