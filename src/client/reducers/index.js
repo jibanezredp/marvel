@@ -2,7 +2,10 @@ import _ from 'lodash';
 import * as hero from '../actions/heroes';
 
 const initialState = {
-  heroes: {},
+  heroes: {
+    data: {},
+    isFetching: false,
+  },
 };
 
 function heroes(state = {}, action) {
@@ -10,6 +13,25 @@ function heroes(state = {}, action) {
   case hero.REQUEST_HEROES:
     return {
       ...state,
+      isFetching: true,
+    };
+  case hero.RECEIVE_HEROES:
+    return {
+      data: action.heroes,
+      isFetching: false,
+    };
+  case hero.REQUEST_HERO:
+    return {
+      ...state,
+      isFetching: true,
+    };
+  case hero.RECEIVE_HERO:
+    return {
+      data: {
+        ...state.data,
+        [action.id]: action.hero,
+      },
+      isFetching: false,
     };
   default:
     return state;

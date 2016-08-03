@@ -35,15 +35,16 @@ export const requestHero = () => ({
   type: REQUEST_HERO,
 });
 
-export const receiveHero = (json) => ({
+export const receiveHero = (id, json) => ({
   type: RECEIVE_HERO,
-  hero: _.keyBy(json, o => o.id),
+  id,
+  hero: json.data.results[0],
 });
 
 export const fetchHero = (id) => (
   (dispatch) => {
     dispatch(requestHero());
     fetchJSON(`http://gateway.marvel.com/v1/public/characters/${id}${urlParams()}`)
-      .then(res => dispatch(receiveHero(res)));
+      .then(res => dispatch(receiveHero(id, res)));
   }
 );
