@@ -63,11 +63,10 @@ h2 {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-around;;
+	justify-content: space-around;
 	align-items: flex-start;
 	margin: 50px;
 }
-
 
 .hero-thumbnail {
 	background: white;
@@ -80,4 +79,12 @@ h2 {
 .hero-thumbnail > img {
 	width: 200px;
 	height: 200px;
+}
+
+.flex-nav {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
 }
