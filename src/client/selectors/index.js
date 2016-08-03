@@ -1,10 +1,8 @@
 import { createSelector } from 'reselect';
 
-const getTasks = state => state.tasks;
-const getLists = state => state.lists;
+const getHeroes = state => state.heroes;
 
 export const getProps = createSelector(
-  getTasks,
-  getLists,
-  (tasks, lists) => ({ tasks, lists }),
+  getHeroes,
+  (heroes) => ({ heroes }),
 );

@@ -7,7 +7,6 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import App from './containers/App';
 import rootReducer from './reducers';
-import { fetchHeroes, fetchHero } from './actions/heroes';
 
 const logger = createLogger();
 
@@ -15,9 +14,6 @@ const store = createStore(
   rootReducer,
   applyMiddleware(thunk, logger),
 );
-
-store.dispatch(fetchHeroes());
-store.dispatch(fetchHero(1011334));
 
 ReactDom.render(
   <Provider store={store}>
