@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getProps } from '../selectors';
 import HeroList from '../components/HeroList';
+import Hero from '../components/Hero';
 import {
   fetchHeroes,
   toggleDetails,
@@ -16,7 +17,7 @@ class App extends React.Component {
   render() {
     let display = <HeroList {...this.props} />;
     if (this.props.heroes.details.toggled)
-      display = <p>1</p>;
+      display = <Hero {...this.props} hero={this.props.heroes.details.data} />;
 
     return (
       <div className='marvel'>
@@ -37,7 +38,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onToggleDetails: (id) => {
     dispatch(toggleDetails(id));
-  }
+  },
 });
 
 export default connect(getProps, mapDispatchToProps)(App);

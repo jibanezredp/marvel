@@ -43,8 +43,8 @@ function heroes(state = initialState.heroes, action) {
       ...state,
       details: {
         data: state.data[action.id],
-        toggled: true,
-      }
+        toggled: !state.details.toggled,
+      },
     };
   default:
     return state;

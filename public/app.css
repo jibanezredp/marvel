@@ -55,7 +55,34 @@ body {
 	background: #E2E4E6;
 }
 
-h2 {
+h1, h2 {
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+button {
+	display: block;
+	margin: 10px auto;
+}
+
+.flex {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.details {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.hero > p {
 	text-align: center;
 }
 
