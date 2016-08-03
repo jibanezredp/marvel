@@ -3,8 +3,8 @@ import _ from 'lodash';
 
 const Nav = ({ routes }) => {
 
-  const r = _.map(routes, route => (
-    <div><a href={route.url}>{route.type}</a></div>
+  const r = _.map(routes, (route, i) => (
+    <div key={i}><a href={route.url}>{route.type}</a></div>
   ));
 
   return (

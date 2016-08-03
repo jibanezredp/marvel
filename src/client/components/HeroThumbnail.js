@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from './Nav';
 
-const HeroThumbnail = ({ name, urls, thumbnail }) => {
+const HeroThumbnail = ({ name, thumbnail, urls }) => {
 
   const thumbnailSrc = `${thumbnail.path}.${thumbnail.extension}`;
 
@@ -16,8 +16,8 @@ const HeroThumbnail = ({ name, urls, thumbnail }) => {
 
 HeroThumbnail.propTypes = {
   name: React.PropTypes.string.isRequired,
-  urls: React.PropTypes.array.isRequired,
   thumbnail: React.PropTypes.object.isRequired,
+  urls: React.PropTypes.array.isRequired,
 };
 
 export default HeroThumbnail;
