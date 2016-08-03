@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import * as hero from '../actions/heroes';
 
 const initialState = {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getProps } from '../selectors';
+import HeroList from '../components/HeroList';
 import {
   fetchHeroes,
 } from '../actions/heroes';
@@ -13,14 +14,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='marvel'>
-      </div>
+      <HeroList heroes={this.props.heroes} />
     );
   }
 }
 
 App.propTypes = {
-
+  fetchAll: React.PropTypes.func.isRequired,
+  heroes: React.PropTypes.object.isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => ({
