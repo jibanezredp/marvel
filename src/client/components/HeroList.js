@@ -2,10 +2,10 @@ import React from 'react';
 import _ from 'lodash';
 import HeroThumbnail from './HeroThumbnail';
 
-const HeroList = ({ heroes }) => {
+const HeroList = (props) => {
 
-  const heroElems = _.map(heroes.data, hero => (
-    <HeroThumbnail {...hero} key={hero.id} />
+  const heroElems = _.map(props.heroes.data, hero => (
+    <HeroThumbnail {...props} {...hero} key={hero.id} />
   ));
 
   return (

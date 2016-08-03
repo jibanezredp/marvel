@@ -1,15 +1,15 @@
 import React from 'react';
 import Nav from './Nav';
 
-const HeroThumbnail = ({ name, thumbnail, urls }) => {
+const HeroThumbnail = (props) => {
 
-  const thumbnailSrc = `${thumbnail.path}.${thumbnail.extension}`;
+  const thumbnailSrc = `${props.thumbnail.path}.${props.thumbnail.extension}`;
 
   return (
     <div className='hero-thumbnail'>
       <img src={thumbnailSrc} />
-      <h2>{name}</h2>
-      <Nav routes={urls} />
+      <h2>{props.name}</h2>
+      <Nav {...props} routes={props.urls} />
     </div>
   );
 };

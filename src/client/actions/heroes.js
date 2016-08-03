@@ -9,6 +9,7 @@ export const REQUEST_HEROES = 'REQUEST_HEROES';
 export const RECEIVE_HEROES = 'RECEIVE_HEROES';
 export const REQUEST_HERO = 'REQUEST_HERO';
 export const RECEIVE_HERO = 'RECEIVE_HERO';
+export const TOGGLE_DETAILS = 'TOGGLE_DETAILS';
 
 /*
  * action creators
@@ -48,3 +49,8 @@ export const fetchHero = (id) => (
       .then(res => dispatch(receiveHero(id, res)));
   }
 );
+
+export const toggleDetails = (id) => ({
+  type: TOGGLE_DETAILS,
+  id,
+});

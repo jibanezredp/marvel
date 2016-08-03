@@ -4,6 +4,7 @@ import { getProps } from '../selectors';
 import HeroList from '../components/HeroList';
 import {
   fetchHeroes,
+  toggleDetails,
 } from '../actions/heroes';
 
 class App extends React.Component {
@@ -13,8 +14,14 @@ class App extends React.Component {
   }
 
   render() {
+    let display = <HeroList {...this.props} />;
+    if (this.props.heroes.details.toggled)
+      display = <p>1</p>;
+
     return (
-      <HeroList heroes={this.props.heroes} />
+      <div className='marvel'>
+        {display}
+      </div>
     );
   }
 }
@@ -28,6 +35,9 @@ const mapDispatchToProps = (dispatch) => ({
   fetchAll: () => {
     dispatch(fetchHeroes());
   },
+  onToggleDetails: (id) => {
+    dispatch(toggleDetails(id));
+  }
 });
 
 export default connect(getProps, mapDispatchToProps)(App);

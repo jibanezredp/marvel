@@ -3,11 +3,15 @@ import * as hero from '../actions/heroes';
 const initialState = {
   heroes: {
     data: {},
+    details: {
+      toggled: false,
+      data: {},
+    },
     isFetching: false,
   },
 };
 
-function heroes(state = {}, action) {
+function heroes(state = initialState.heroes, action) {
   switch (action.type) {
   case hero.REQUEST_HEROES:
     return {
@@ -16,6 +20,7 @@ function heroes(state = {}, action) {
     };
   case hero.RECEIVE_HEROES:
     return {
+      ...state,
       data: action.heroes,
       isFetching: false,
     };
@@ -26,11 +31,20 @@ function heroes(state = {}, action) {
     };
   case hero.RECEIVE_HERO:
     return {
+      ...state,
       data: {
         ...state.data,
         [action.id]: action.hero,
       },
       isFetching: false,
+    };
+  case hero.TOGGLE_DETAILS:
+    return {
+      ...state,
+      details: {
+        data: state.data[action.id],
+        toggled: true,
+      }
     };
   default:
     return state;
