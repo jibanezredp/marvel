@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from './Nav';
+import HeroNav from './HeroNav';
 
 const HeroThumbnail = (props) => {
 
@@ -9,7 +9,7 @@ const HeroThumbnail = (props) => {
     <div className='hero-thumbnail'>
       <img src={thumbnailSrc} />
       <h2>{props.name}</h2>
-      <Nav {...props} routes={props.urls} />
+      <HeroNav {...props} routes={props.urls} />
     </div>
   );
 };

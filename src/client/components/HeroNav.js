@@ -1,18 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router';
 import _ from 'lodash';
 
-const Nav = ({ id, onToggleDetails, routes }) => {
-
-  const onClick = (e) => {
-    e.preventDefault();
-    onToggleDetails(id);
-  };
+const HeroNav = ({ id, routes }) => {
 
   const r = _.map(routes, (route, i) => {
     if (route.type === 'detail') {
       return (
         <div key={i}>
-          <a href={route.url} onClick={onClick}>{route.type}</a>
+          <Link to={`/hero/${id}`}>{route.type}</Link>
         </div>
       );
     }
@@ -28,10 +24,9 @@ const Nav = ({ id, onToggleDetails, routes }) => {
   );
 };
 
-Nav.propTypes = {
+HeroNav.propTypes = {
   id: React.PropTypes.number.isRequired,
-  onToggleDetails: React.PropTypes.func.isRequired,
   routes: React.PropTypes.array.isRequired,
 };
 
-export default Nav;
+export default HeroNav;

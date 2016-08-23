@@ -3,10 +3,6 @@ import * as hero from '../actions/heroes';
 const initialState = {
   heroes: {
     data: {},
-    details: {
-      toggled: false,
-      data: {},
-    },
     isFetching: false,
   },
 };
@@ -37,14 +33,6 @@ function heroes(state = initialState.heroes, action) {
         [action.id]: action.hero,
       },
       isFetching: false,
-    };
-  case hero.TOGGLE_DETAILS:
-    return {
-      ...state,
-      details: {
-        data: state.data[action.id],
-        toggled: !state.details.toggled,
-      },
     };
   default:
     return state;

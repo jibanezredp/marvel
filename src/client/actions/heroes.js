@@ -49,8 +49,3 @@ export const fetchHero = (id) => (
       .then(res => dispatch(receiveHero(id, res)));
   }
 );
-
-export const toggleDetails = (id) => ({
-  type: TOGGLE_DETAILS,
-  id,
-});
